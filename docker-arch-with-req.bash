@@ -21,10 +21,10 @@ docker build -t arch-amd64-builds .
 docker run \
   -t \
   --rm \
-  -v "$(pwd)/../$PKGNAME:/sourcedata" \
-  -v "$(pwd):/build-scripts" \
-  -v "$(pwd)/../$PKGNAME-build:/build" \
-  -v "$(pwd)/../artifacts:/artifacts" \
+  -v "$(pwd)/../$PKGNAME:/sourcedata:Z" \
+  -v "$(pwd):/build-scripts:Z" \
+  -v "$(pwd)/../$PKGNAME-build:/build:Z" \
+  -v "$(pwd)/../artifacts:/artifacts:Z" \
   arch-amd64-builds \
   /build-scripts/build-with-req.bash "${@:2}"
 

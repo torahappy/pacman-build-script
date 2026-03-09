@@ -21,9 +21,9 @@ docker build -t arch-amd64-builds .
 docker run \
   -t \
   --rm \
-  -v "$(pwd)/../$PKGNAME:/sourcedata" \
-  -v "$(pwd):/build-scripts" \
-  -v "$(pwd)/../$PKGNAME-build:/build" \
+  -v "$(pwd)/../$PKGNAME:/sourcedata:Z" \
+  -v "$(pwd):/build-scripts:Z" \
+  -v "$(pwd)/../$PKGNAME-build:/build:Z" \
   arch-amd64-builds \
   /build-scripts/build.bash
 

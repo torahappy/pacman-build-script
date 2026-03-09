@@ -11,8 +11,8 @@ docker build -t arch-amd64-builds .
 docker run \
   -t \
   --rm \
-  -v "$(pwd)/../$PKGNAME:/sourcedata" \
-  -v "$(pwd):/build-scripts" \
+  -v "$(pwd)/../$PKGNAME:/sourcedata:Z" \
+  -v "$(pwd):/build-scripts:Z" \
   arch-amd64-builds \
   /build-scripts/console.bash "updpkgsums"
 
