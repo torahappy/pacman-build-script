@@ -10,7 +10,7 @@ docker run \
   -t \
   --rm \
   -v "$(pwd)/../artifacts:/artifacts:Z" \
-  -v "$(pwd):/build-scripts" \
+  -v "$(pwd):/build-scripts:Z" \
   arch-amd64-builds \
   /build-scripts/repo.bash
 
