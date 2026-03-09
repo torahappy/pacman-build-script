@@ -1,0 +1,5 @@
+#!/bin/bash
+/bin/bsdtar --no-xattr "$@"
+if [[ $? -ne 0 ]]; then
+/bin/bsdtar "$@"
+fi
